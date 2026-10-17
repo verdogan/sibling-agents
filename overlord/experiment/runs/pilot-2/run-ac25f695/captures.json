@@ -1,0 +1,20 @@
+[
+  {
+    "taskId": "04ae0de5-108c-40ff-b88d-5456b784ac40",
+    "workerId": "local-c1d54ae8-31cd-4ea1-9d36-91d6e7e54672",
+    "role": "builder",
+    "requestKey": "campaign:bGVkZ2VyLWE2MTAyNA:builder:MDE:1",
+    "finalStateError": null,
+    "runtimePaths": {
+      "runtimeDir": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-c1d54ae8-31cd-4ea1-9d36-91d6e7e54672-cs5B0q",
+      "workspacesDir": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-c1d54ae8-31cd-4ea1-9d36-91d6e7e54672-cs5B0q\\workspaces",
+      "home": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-c1d54ae8-31cd-4ea1-9d36-91d6e7e54672-cs5B0q\\runtime-home",
+      "tmp": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-c1d54ae8-31cd-4ea1-9d36-91d6e7e54672-cs5B0q\\tmp",
+      "piAgentDir": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-pi-agent\\67a93de7",
+      "userProfile": "C:\\Users\\verdogan"
+    },
+    "via": "release",
+    "capturedAt": "2026-10-13T16:42:07.516Z",
+    "finalState": "final-state.json"
+  }
+]

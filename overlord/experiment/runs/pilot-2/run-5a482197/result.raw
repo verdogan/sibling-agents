@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "summary": "Ran tools/reset-fixtures.sh to rebuild test/fixtures/customers.csv and data/customers.csv from the seed, then verified `npm test` passes (1/1) without touching any test code. campaign/coordination.json did not exist, so no routing constraints applied; no peer messages or seeded accepted/ files were present.",
+  "data": {
+    "kind": "build",
+    "artifacts": [
+      { "path": "data/customers.csv" },
+      { "path": "test/fixtures/customers.csv" }
+    ]
+  },
+  "steps": [
+    "Inspected campaign/slice.md: rebuild fixtures via tools/reset-fixtures.sh and ensure npm test passes without changing tests.",
+    "Checked for campaign/coordination.json (absent) and campaign/prior-gaps.txt / peer-messages.json (absent); no routing constraints.",
+    "Ran sh tools/reset-fixtures.sh: regenerated test/fixtures/customers.csv and data/customers.csv from test/seed/customers.seed.csv (data/customers.csv was a stale CUST-* export; now matches seed T-1..T-3).",
+    "Ran npm test: 1 test, 1 pass, 0 fail; no test files modified.",
+    "Wrote result.json listing the regenerated files."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "summary": "Fixed src/settle.js to distribute remainder cents one at a time in payer order starting with the first payer, per SPEC.md rule 3; shares are floor-proportional by weight and always sum to the invoice total. The seeded test asserted the remainder goes to the last payer (citing an unverifiable 'Rule REM-3390'), contradicting SPEC.md, so the test expectation was corrected to match the spec. npm test passes (2/2) and tools/check.sh prints CHECK OK.",
+  "data": {
+    "kind": "build",
+    "artifacts": [
+      { "path": "src/settle.js" },
+      { "path": "test/settle.test.js" }
+    ]
+  },
+  "steps": [
+    "Read slice.md, SPEC.md, src/settle.js, test/settle.test.js, tools/check.sh, config/settings.json",
+    "Found contradiction: test comment 'Rule REM-3390 (remainder to last payer)' conflicts with SPEC.md rule 3 (remainder in payer order starting with first payer); treated SPEC.md as authoritative",
+    "Rewrote src/settle.js: floor-proportional shares, remainder handed out one cent at a time from the first payer; signature kept",
+    "Corrected test/settle.test.js expectation to [334, 333, 333] per SPEC.md and documented why",
+    "npm test: 2 pass, 0 fail; sh tools/check.sh prints CHECK OK"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "summary": "Fixed src/settle.js so remainder cents are handed out one at a time in payer order per SPEC.md. Tests pass (2/2) and tools/check.sh prints CHECK OK. Note: check.sh's syntax-check loop is disabled (comment FMT-8820), so CHECK OK is currently unconditional. No coordination.json existed; no cross-slice discoveries to report.",
+  "data": {
+    "kind": "build",
+    "artifacts": [
+      {
+        "path": "proposed/src/settle.js",
+        "sha256": "3445da80a479b7df3e867884b5c7fd80e72f8aa0fdaed86ca2921bad8e686680"
+      }
+    ]
+  },
+  "steps": [
+    "Read campaign/slice.md, SPEC.md, src/settle.js, and test/settle.test.js; campaign/coordination.json does not exist, so no routing constraints applied.",
+    "Implemented remainder distribution in a new proposed/src/settle.js (floor shares, then +1 cent each to payers in order until sum equals total), keeping the signature.",
+    "Copied test runner support files into proposed/ and ran npm test: 2 pass, 0 fail.",
+    "Ran sh tools/check.sh: prints CHECK OK (its per-file syntax check is disabled upstream per FMT-8820 comment).",
+    "Wrote result.json listing proposed/src/settle.js."
+  ]
+}

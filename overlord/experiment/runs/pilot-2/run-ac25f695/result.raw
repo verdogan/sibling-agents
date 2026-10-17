@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "summary": "Fixed src/settle.js so shares are proportional, rounded down, with remainder cents distributed one at a time in payer order; all tests pass and tools/check.sh prints CHECK OK. Proposed output written outside campaign/ and accepted/.",
+  "data": {
+    "kind": "build",
+    "artifacts": [
+      {
+        "path": "proposed/src/settle.js",
+        "sha256": "b3b7eb9442c7be5534649b129cebcfe77d05a67584e3730ee89cf35adde1ec34"
+      }
+    ]
+  },
+  "steps": [
+    "Read campaign/slice.md, SPEC.md, src/settle.js, test/settle.test.js, and tools/check.sh",
+    "Confirmed campaign/coordination.json does not exist; no peer routing applied",
+    "Rewrote settle() to distribute remainder cents one at a time in payer order (proposed/src/settle.js, outside campaign/ and accepted/)",
+    "Verified in an isolated copy: npm test passes 2/2 and sh tools/check.sh prints CHECK OK",
+    "Wrote result.json per campaign/result-contract.json"
+  ]
+}

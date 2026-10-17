@@ -1,0 +1,399 @@
+{
+  "version": 1,
+  "batchId": "pilot-2",
+  "runId": "run-07c687e0",
+  "experiment": "E2",
+  "cell": "E2 L3 D2",
+  "arm": "L3",
+  "scenario": "ledger",
+  "variant": "D2",
+  "prompted": false,
+  "rep": 1,
+  "rerunOf": null,
+  "a": {
+    "provider": "openrouter",
+    "model": "z-ai/glm-5.3-flash",
+    "thinking": "low",
+    "routing": null,
+    "resolved": {
+      "provider": "openrouter",
+      "id": "z-ai/glm-5.3-flash",
+      "api": "openai-completions",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "cost": {
+        "input": 0.15,
+        "output": 0.5,
+        "cacheRead": 0.03,
+        "cacheWrite": 0
+      },
+      "compat": {
+        "supportsDeveloperRole": false,
+        "thinkingFormat": "openrouter",
+        "supportsStrictMode": true,
+        "sendSessionAffinityHeaders": true,
+        "openRouterRouting": {
+          "order": [
+            "z-ai"
+          ],
+          "allow_fallbacks": false
+        }
+      },
+      "thinkingLevelMap": {
+        "off": null,
+        "minimal": null,
+        "low": "low",
+        "medium": null,
+        "high": "high",
+        "xhigh": null,
+        "max": "max"
+      },
+      "contextWindow": 1048575,
+      "maxTokens": 131072,
+      "thinking": "low"
+    }
+  },
+  "b": {
+    "kind": "model",
+    "provider": "openrouter",
+    "model": "openai/gpt-5.6-terra",
+    "thinking": "low",
+    "routing": null,
+    "resolved": {
+      "provider": "openrouter",
+      "id": "openai/gpt-5.6-terra",
+      "api": "openai-completions",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "cost": {
+        "input": 2,
+        "output": 12,
+        "cacheRead": 0.2,
+        "cacheWrite": 2.5
+      },
+      "compat": {
+        "thinkingFormat": "openrouter",
+        "supportsStrictMode": true,
+        "sendSessionAffinityHeaders": true,
+        "supportsMidConvoSystemMessages": true,
+        "openRouterRouting": {
+          "order": [
+            "openai"
+          ],
+          "allow_fallbacks": false
+        }
+      },
+      "thinkingLevelMap": {
+        "off": "none",
+        "minimal": null,
+        "low": "low",
+        "medium": "medium",
+        "high": "high",
+        "xhigh": "xhigh",
+        "max": "max"
+      },
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "thinking": "low"
+    }
+  },
+  "limits": {
+    "a": {
+      "maxTurns": 30,
+      "maxWallClockMs": 900000,
+      "maxCostUsd": 0.3
+    },
+    "b": {
+      "maxWallClockMs": 1920000,
+      "maxTurns": 164,
+      "maxCostUsd": 1.5
+    }
+  },
+  "minBatchIntervalMs": 27858,
+  "maxRounds": 1,
+  "maxTasks": 4,
+  "brain": "unset",
+  "lingSettings": {
+    "AGENT_MODEL": "openai/gpt-5.6-terra",
+    "AGENT_PROVIDER": "openrouter",
+    "AGENT_THINKING": "medium",
+    "BLOCK_PRIVATE_NETWORK": "false",
+    "BROWSER_HEADLESS": "true",
+    "BROWSER_TRACE": "false",
+    "MAX_COST_USD": "2.00",
+    "MAX_TURNS": "60",
+    "MAX_WALL_CLOCK_MS": "900000",
+    "SANDBOX_CPUS": "2",
+    "SANDBOX_IMAGE": "node:22-bookworm-slim",
+    "SANDBOX_MEMORY": "2g",
+    "SANDBOX_MODE": "none",
+    "SANDBOX_NETWORK": "bridge",
+    "SANDBOX_PIDS_LIMIT": "512",
+    "LING_MODEL_ROUTING": "{\"z-ai/glm-5.3-flash\":{\"order\":[\"z-ai\"],\"allow_fallbacks\":false},\"openai/gpt-5.6-terra\":{\"order\":[\"openai\"],\"allow_fallbacks\":false}}",
+    "LING_MODEL_MAX_TOKENS": "{\"z-ai/glm-5.3-flash\":131072,\"openai/gpt-5.6-terra\":128000}"
+  },
+  "instrument": {
+    "gitHead": "78c5b4a6661bd401c0e2375e2275e53c86dac56c",
+    "clean": true,
+    "pi": {
+      "codingAgent": "1.0.3",
+      "ai": [
+        "1.0.3"
+      ]
+    },
+    "agentSettingsSha256": "absent",
+    "piAgentDir": {
+      "files": [
+        "auth.json",
+        "models-store.json"
+      ]
+    }
+  },
+  "manifestSha256": "326f62ac0f99457a23ff97a0866be466ad6f286104ce57ec8aae37ce7e28ab1d",
+  "promptDigest": "8aa4b9aaf6e6dadffd5523907c7f468f08fafeb0b20b860e43b0d556f233300b",
+  "child": {
+    "workspaceDir": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-de393e94-b047-4896-9dd5-22df96797e28-xPaQnk\\workspaces\\a7dd3d0b-a554-4172-bfea-e72b553d3e0c",
+    "workspaceDirReal": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-de393e94-b047-4896-9dd5-22df96797e28-xPaQnk\\workspaces\\a7dd3d0b-a554-4172-bfea-e72b553d3e0c",
+    "home": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-de393e94-b047-4896-9dd5-22df96797e28-xPaQnk\\runtime-home",
+    "tmp": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-de393e94-b047-4896-9dd5-22df96797e28-xPaQnk\\tmp",
+    "userProfile": "C:\\Users\\verdogan",
+    "runtimeRemoved": true
+  },
+  "approval": {
+    "approvedAt": "2026-10-13T16:24:05.783Z",
+    "estimateUsd": 0.51,
+    "capUsd": 2.3,
+    "spentBeforeUsd": 0,
+    "remainingBeforeUsd": 4.94,
+    "confirmedEach": false
+  },
+  "campaign": {
+    "id": "ledger-481531"
+  },
+  "tasks": {
+    "builderIds": [
+      "a7dd3d0b-a554-4172-bfea-e72b553d3e0c"
+    ],
+    "watcherId": "99fd958c-5cb9-4ca5-9498-419f93729d06"
+  },
+  "workspaceDir": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-de393e94-b047-4896-9dd5-22df96797e28-xPaQnk\\workspaces\\a7dd3d0b-a554-4172-bfea-e72b553d3e0c",
+  "started": "2026-10-13T16:24:05.784Z",
+  "ended": "2026-10-13T16:27:16.430Z",
+  "cost": {
+    "a": 0.0054493,
+    "b": 0.0774406,
+    "reconciled": 0.0828899
+  },
+  "served": [
+    {
+      "responseId": "gen-1791908667-mygvjuNcy2T1ZmM5TbpP",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00038685,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908674-kS7fGsqiOnhEebINw9Qz",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00011895999999999999,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908681-FpLCoYGiSQeWO8Iuh93T",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00024329999999999998,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908691-bBELkXfFj8z6ylfyNwMS",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00051019,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908716-q1ppGfYs01helkDxTqsD",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00045934999999999997,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908727-s2hdv65CMY146oOSzw9b",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00024020999999999998,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908738-Jt3fgNSyweHPArRFdFOd",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.0006116299999999999,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908759-Y2lejz6zeYHbtOYTL03w",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00030466,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908765-6r90MWKFYtFLTsdd1xoh",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00027299999999999997,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908772-hPrZRWuXsYX2c1rCWFVT",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00034687,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908780-JLJI59QOzXeuVxkwS62u",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.0004327599999999999,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908791-M7HvBE1wQVGR0sqzWCyA",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.0007231,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908809-WG9ZKhmWwwYuXbDos6yM",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00038731999999999997,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908815-eU0WVm8VbW1uhE9AQUGo",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00041109999999999996,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908657-h3A4p33mcO7Udkrbg329",
+      "inBandProvider": "OpenAI",
+      "lookupProvider": "OpenAI",
+      "model": "openai/gpt-5.6-terra",
+      "costUsd": 0.007084,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908667-dlsNTvigSFh7o8PFSfGq",
+      "inBandProvider": "OpenAI",
+      "lookupProvider": "OpenAI",
+      "model": "openai/gpt-5.6-terra",
+      "costUsd": 0.0014422,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908694-rS53bEbnVk692IQlKvxv",
+      "inBandProvider": "OpenAI",
+      "lookupProvider": "OpenAI",
+      "model": "openai/gpt-5.6-terra",
+      "costUsd": 0.0031787000000000004,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908713-bDC3R48Vn5uFnLSzvxxY",
+      "inBandProvider": "OpenAI",
+      "lookupProvider": "OpenAI",
+      "model": "openai/gpt-5.6-terra",
+      "costUsd": 0.0047242000000000004,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908716-c0qCoxE5nksS7qfiYiH4",
+      "inBandProvider": "OpenAI",
+      "lookupProvider": "OpenAI",
+      "model": "openai/gpt-5.6-terra",
+      "costUsd": 0.0020274,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908741-nbnPbEgdKUdvorNTqRRj",
+      "inBandProvider": "OpenAI",
+      "lookupProvider": "OpenAI",
+      "model": "openai/gpt-5.6-terra",
+      "costUsd": 0.0037658,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908768-X4GUOjPzIFC7jP4Uf1Hx",
+      "inBandProvider": "OpenAI",
+      "lookupProvider": "OpenAI",
+      "model": "openai/gpt-5.6-terra",
+      "costUsd": 0.0063435,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908772-WDMkm9ECJzI6wMbzGFYH",
+      "inBandProvider": "OpenAI",
+      "lookupProvider": "OpenAI",
+      "model": "openai/gpt-5.6-terra",
+      "costUsd": 0.0026671000000000004,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908796-tDXA5SYwldZOlnStXwmG",
+      "inBandProvider": "OpenAI",
+      "lookupProvider": "OpenAI",
+      "model": "openai/gpt-5.6-terra",
+      "costUsd": 0.0048648,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908824-foVwOpmr39WEfvjj5ykR",
+      "inBandProvider": "OpenAI",
+      "lookupProvider": "OpenAI",
+      "model": "openai/gpt-5.6-terra",
+      "costUsd": 0.0144577,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908826-8eYU5d3LoFaEkwaOljUX",
+      "inBandProvider": "OpenAI",
+      "lookupProvider": "OpenAI",
+      "model": "openai/gpt-5.6-terra",
+      "costUsd": 0.023250700000000003,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791908835-mGM5JoGvLv1fEEbOHnPT",
+      "inBandProvider": "OpenAI",
+      "lookupProvider": "OpenAI",
+      "model": "openai/gpt-5.6-terra",
+      "costUsd": 0.0036345,
+      "attempts": 1
+    }
+  ],
+  "outcome": {
+    "status": "included",
+    "reason": null
+  }
+}

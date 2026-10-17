@@ -1,0 +1,6 @@
+{"event":"batch_started","batchId":"pilot-5","manifestSha256":"9b7f86d3e28fb6e38562b5a7786a1631e116a2b3b8978f72aa76d381c43e3393","timestamp":"2026-10-12T18:52:57.473Z"}
+{"event":"run_started","runId":"run-a430c358","cap":0.4,"estimate":0.06,"spentBefore":0,"timestamp":"2026-10-12T18:52:58.444Z"}
+{"event":"run_finished","runId":"run-a430c358","status":"success","stoppedBy":null,"outcome":"included","reason":null,"costUsd":0.0019222599999999999,"reconciled":true,"lookupFailed":false,"timestamp":"2026-10-12T18:54:42.733Z"}
+{"event":"run_started","runId":"run-fe6bf064","cap":2.3,"estimate":0.51,"spentBefore":0.0019222599999999999,"timestamp":"2026-10-12T18:54:42.750Z"}
+{"event":"run_finished","runId":"run-fe6bf064","status":"success","stoppedBy":null,"outcome":"included","reason":null,"costUsd":0.05242286000000001,"reconciled":true,"lookupFailed":false,"timestamp":"2026-10-12T18:57:21.333Z"}
+{"event":"batch_finished","timestamp":"2026-10-12T18:57:21.336Z"}

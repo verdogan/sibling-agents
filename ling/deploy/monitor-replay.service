@@ -1,0 +1,39 @@
+[Unit]
+Description=Ling deterministic social-monitor replay
+After=network-online.target autonomous-pi-agent.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=piagent
+Group=piagent
+WorkingDirectory=/opt/autonomous-pi-agent
+ExecStart=/usr/bin/node dist/monitor/replay.js
+EnvironmentFile=/etc/autonomous-pi-agent.env
+Environment=HOME=/opt/autonomous-pi-agent/runtime-home
+
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+RestrictRealtime=true
+RestrictNamespaces=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+LockPersonality=true
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+
+ReadWritePaths=/opt/autonomous-pi-agent/data
+ReadWritePaths=/opt/autonomous-pi-agent/recipes
+ReadWritePaths=/opt/autonomous-pi-agent/runtime-home
+
+MemoryDenyWriteExecute=false
+MemoryMax=3G
+CPUQuota=150%
+TasksMax=1024

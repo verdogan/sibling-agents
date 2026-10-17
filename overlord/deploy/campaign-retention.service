@@ -1,0 +1,16 @@
+[Unit]
+Description=Prune expired Ling campaign artifacts
+
+[Service]
+Type=oneshot
+User=lingoverlord
+Group=lingoverlord
+WorkingDirectory=/opt/ling-overlord
+EnvironmentFile=/etc/ling-overlord.env
+ExecStart=/usr/bin/node dist/scripts/prune-campaigns.js /var/lib/ling-overlord/campaigns
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/ling-overlord

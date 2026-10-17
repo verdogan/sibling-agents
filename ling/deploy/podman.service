@@ -1,0 +1,29 @@
+[Unit]
+Description=Rootless Podman API for Ling task sandboxes
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=piagent
+Group=piagent
+Environment=HOME=/opt/autonomous-pi-agent/runtime-home
+Environment=XDG_RUNTIME_DIR=/run/piagent-podman
+RuntimeDirectory=piagent-podman
+RuntimeDirectoryMode=0700
+ExecStart=/usr/bin/podman system service --time=0 unix:///run/piagent-podman/podman.sock
+Restart=on-failure
+RestartSec=5s
+
+# This service owns only a rootless user namespace. It never has host root.
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+ReadWritePaths=/opt/autonomous-pi-agent/runtime-home
+
+[Install]
+WantedBy=multi-user.target

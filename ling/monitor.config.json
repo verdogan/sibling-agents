@@ -1,0 +1,8 @@
+{
+  "watches": [
+    {
+      "recipe": "mastodon-public-hashtag",
+      "query": "openai"
+    }
+  ]
+}

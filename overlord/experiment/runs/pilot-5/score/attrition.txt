@@ -1,0 +1,8 @@
+Pilot. Windows, `SANDBOX_MODE=none`, sensor absent. Scored only from what the overlord recorded: tool calls, messages, A's result.json and the end-of-run final-state record. Not pooled with counted data.
+
+### Attrition
+
+| arm | runs | excluded | stoppedBy | no valid result.json | B_lost | hold_expired | not_triggered | not_triggered (cap) | preempted | regular batches | served: unknown | unavailable fields | final-state gaps | empty_args | early_result | contamination_unresolved |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| L1 | 1 | 0 | error 1 | 1 | 0 | 0 | 0 | 0 | 0 | - | 0 | 0 | 0 | 1 | 0/1 | 1 |
+| L3 | 1 | 0 | - | 0 | 0 | 0 | 0 | 0 | 0 | - | 0 | 0 | 0 | 0 | 1/1 | 1 |

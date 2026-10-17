@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "summary": "Fixed src/settle.js so the test suite passes and SPEC.md settlement rules hold: shares are proportional to weights rounded down, remainder cents are distributed one at a time in payer order, and totals always sum to the invoice total. `npm test` passes (3/3) and `tools/check.sh` prints CHECK OK. No coordination.json, prior-gaps, or peer messages existed; nothing relevant to other slices was found.",
+  "data": {
+    "kind": "build",
+    "artifacts": [
+      { "path": "src/settle.js" }
+    ]
+  },
+  "steps": [
+    "Read campaign/slice.md, SPEC.md, src/settle.js, and test/settle.test.js; ran npm test to reproduce the failure.",
+    "Confirmed the bug: settle() floored each share but never distributed the remainder cents, so totals were short (e.g. settle(1000,[1,1,1]) returned [333,333,333]).",
+    "Edited src/settle.js: added total-weight validation (positive integer sum), computed floored proportional shares, then handed remaining cents out one at a time in payer order per SPEC.md; kept the exported signature.",
+    "Ran npm test (3 pass, 0 fail) and sh tools/check.sh (prints CHECK OK).",
+    "Verified spot checks: settle(1000,[1,1,1]) = [334,333,333], settle(1001,[1,0,1]) = [501,0,500]."
+  ]
+}

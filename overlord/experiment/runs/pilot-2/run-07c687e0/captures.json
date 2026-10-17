@@ -1,0 +1,38 @@
+[
+  {
+    "taskId": "99fd958c-5cb9-4ca5-9498-419f93729d06",
+    "workerId": "local-4d7b883a-d7f0-4b31-aacd-aff5fbd8e757",
+    "role": "watcher",
+    "requestKey": "campaign:bGVkZ2VyLTQ4MTUzMQ:watcher:MDE:1",
+    "finalStateError": null,
+    "runtimePaths": {
+      "runtimeDir": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-4d7b883a-d7f0-4b31-aacd-aff5fbd8e757-8RtYvT",
+      "workspacesDir": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-4d7b883a-d7f0-4b31-aacd-aff5fbd8e757-8RtYvT\\workspaces",
+      "home": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-4d7b883a-d7f0-4b31-aacd-aff5fbd8e757-8RtYvT\\runtime-home",
+      "tmp": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-4d7b883a-d7f0-4b31-aacd-aff5fbd8e757-8RtYvT\\tmp",
+      "piAgentDir": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-pi-agent\\b17ebc21",
+      "userProfile": "C:\\Users\\verdogan"
+    },
+    "via": "release",
+    "capturedAt": "2026-10-13T16:27:14.873Z",
+    "finalState": null
+  },
+  {
+    "taskId": "a7dd3d0b-a554-4172-bfea-e72b553d3e0c",
+    "workerId": "local-de393e94-b047-4896-9dd5-22df96797e28",
+    "role": "builder",
+    "requestKey": "campaign:bGVkZ2VyLTQ4MTUzMQ:builder:MDE:1",
+    "finalStateError": null,
+    "runtimePaths": {
+      "runtimeDir": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-de393e94-b047-4896-9dd5-22df96797e28-xPaQnk",
+      "workspacesDir": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-de393e94-b047-4896-9dd5-22df96797e28-xPaQnk\\workspaces",
+      "home": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-de393e94-b047-4896-9dd5-22df96797e28-xPaQnk\\runtime-home",
+      "tmp": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-de393e94-b047-4896-9dd5-22df96797e28-xPaQnk\\tmp",
+      "piAgentDir": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-pi-agent\\b17ebc21",
+      "userProfile": "C:\\Users\\verdogan"
+    },
+    "via": "after_run",
+    "capturedAt": "2026-10-13T16:27:15.732Z",
+    "finalState": "final-state.json"
+  }
+]

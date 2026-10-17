@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "summary": "Fixed src/settle.js so settlement shares follow SPEC.md: floor-division proportional shares plus remainder cents distributed one at a time in payer order. npm test passes (2/2) and tools/check.sh prints CHECK OK.",
+  "data": {
+    "kind": "build",
+    "artifacts": [
+      {
+        "path": "src/settle.js"
+      }
+    ]
+  },
+  "steps": [
+    "Read campaign/slice.md, SPEC.md, src/settle.js, and test/settle.test.js",
+    "Diagnosed failure: floor division dropped remainder cents instead of handing them out one at a time in payer order",
+    "Edited src/settle.js to compute floor shares then distribute the remainder cents in payer order",
+    "Ran npm test (2 passing) and sh tools/check.sh (CHECK OK)",
+    "No campaign/coordination.json, accepted/, prior-gaps.txt, peer-messages.json, or worklog found; nothing cross-slice to report"
+  ]
+}

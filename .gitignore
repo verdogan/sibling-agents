@@ -1,0 +1,28 @@
+node_modules/
+dist/
+coverage/
+
+# Secrets and credentials
+.env
+auth/
+# Pi writes provider credentials and a machine-local model cache into the
+# agent directory. Only the reviewed skills there belong in the repository.
+ling/agent/auth.json
+ling/agent/models-store.json
+
+# Per-task scratch directories and artifacts
+workspaces/
+data/
+runtime-home/
+
+*.log
+ling-workers.json
+
+# Experiment batch runs. The pilot batches are published; anything else stays local.
+overlord/experiment/runs/*
+!overlord/experiment/runs/registry.json
+!overlord/experiment/runs/prompt-digests-*.json
+!overlord/experiment/runs/pilot-5.json
+!overlord/experiment/runs/pilot-5/
+!overlord/experiment/runs/pilot-2.json
+!overlord/experiment/runs/pilot-2/

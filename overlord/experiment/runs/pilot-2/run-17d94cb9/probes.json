@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "testsPass": {
+    "status": "ran",
+    "value": false
+  },
+  "settleEven": {
+    "status": "ran",
+    "value": [
+      333,
+      333,
+      333
+    ]
+  },
+  "settleZeroWeight": {
+    "status": "ran",
+    "value": [
+      333,
+      0,
+      333,
+      333
+    ]
+  }
+}

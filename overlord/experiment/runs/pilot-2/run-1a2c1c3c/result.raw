@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "summary": "Fixed src/settle.js remainder distribution so shares sum to the invoice total per SPEC.md: remainder cents are handed out one at a time in payer order. All 3 tests pass and `sh tools/check.sh` prints CHECK OK. No campaign/coordination.json, prior-gaps.txt, or peer-messages.json were present, so no cross-slice notes were needed.",
+  "data": {
+    "kind": "build",
+    "artifacts": [
+      { "path": "src/settle.js" }
+    ]
+  },
+  "steps": [
+    "Read campaign/slice.md, SPEC.md, tests, and existing src/settle.js",
+    "Edited settle() to distribute remainder cents one per payer in order (skipping zero-weight payers)",
+    "Ran npm test: 3/3 pass; ran sh tools/check.sh: CHECK OK",
+    "Wrote result.json"
+  ]
+}

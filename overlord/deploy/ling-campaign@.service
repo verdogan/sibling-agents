@@ -1,0 +1,55 @@
+[Unit]
+Description=Ling campaign %i
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=1h
+StartLimitBurst=3
+
+[Service]
+Type=simple
+User=lingoverlord
+Group=lingoverlord
+WorkingDirectory=/opt/ling-overlord
+EnvironmentFile=/etc/ling-overlord.env
+ExecStart=/usr/bin/node dist/scripts/campaign.js run /var/lib/ling-overlord/campaigns/%i/manifest.json --resume
+Restart=on-failure
+RestartSec=15s
+RestartPreventExitStatus=2 130 143
+# The hard stop. Graceful shutdown now cancels active tasks concurrently, so this
+# no longer has to scale with FLEET_MAX_CONCURRENT: the bound is one request
+# timeout plus the driver's settle window, not one per task. Do not rely on
+# DefaultTimeoutStopSec — a wedged driver never exits on its own, so this value
+# and ExecStopPost below are what bound a stop.
+TimeoutStopSec=120s
+
+# The kill path that does not need the overlord to be healthy. systemd runs
+# ExecStopPost after the main process is gone, including when it had to be
+# SIGKILLed, which is the exact case the in-process handler cannot cover: a
+# killed overlord cancels nothing itself, and its workers keep spending against
+# the provider key with nobody left to collect their output.
+#
+# It reads the campaign id out of the manifest rather than assuming it matches
+# the unit instance name, and refuses to run at all without a worker registry in
+# the environment, so it can never start the thing it exists to stop. A non-zero
+# exit here is logged and does not change the unit's result — it means some task
+# could not be confirmed cancelled, which is an operator's problem to see rather
+# than a reason to fail a stop that already happened.
+ExecStopPost=-/usr/bin/node dist/scripts/reap.js --manifest /var/lib/ling-overlord/campaigns/%i/manifest.json
+
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+RestrictRealtime=true
+LockPersonality=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+ReadWritePaths=/var/lib/ling-overlord
+
+[Install]
+WantedBy=multi-user.target

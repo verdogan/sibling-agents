@@ -1,0 +1,19 @@
+{
+  "gitHead": "78c5b4a6661bd401c0e2375e2275e53c86dac56c",
+  "clean": true,
+  "digests": {
+    "L0h:unprompted": "76db6e6f3d0b4b387eb810068f5464e38aed2b9c572f47867a9b61e1accf0a84",
+    "L1:prompted": "0d11a63d54fe2d93f93f26d72d0207686847bb3ce1e89421b6f94f4feda6b622",
+    "L1:unprompted": "c665c3d9371ff332b126af45479bfe0c7f27d9b0fdecd155fb2758cad2704929",
+    "L1s:unprompted": "612a80dcd9898756dd63ea2cddc537d627e091586dfda64ad6833d7b351d7e54",
+    "L2:unprompted": "8aa4b9aaf6e6dadffd5523907c7f468f08fafeb0b20b860e43b0d556f233300b",
+    "L3:unprompted": "8aa4b9aaf6e6dadffd5523907c7f468f08fafeb0b20b860e43b0d556f233300b",
+    "P-direct:unprompted": "8aa4b9aaf6e6dadffd5523907c7f468f08fafeb0b20b860e43b0d556f233300b",
+    "P-relay:unprompted": "8aa4b9aaf6e6dadffd5523907c7f468f08fafeb0b20b860e43b0d556f233300b",
+    "R-control:unprompted": "8aa4b9aaf6e6dadffd5523907c7f468f08fafeb0b20b860e43b0d556f233300b",
+    "R-intervened:unprompted": "8aa4b9aaf6e6dadffd5523907c7f468f08fafeb0b20b860e43b0d556f233300b",
+    "W-control:unprompted": "8aa4b9aaf6e6dadffd5523907c7f468f08fafeb0b20b860e43b0d556f233300b",
+    "W-unprompted:unprompted": "0c40baf31b1f62e177e0aefa90691847e94344ba8ef743dbb4581572f4699595",
+    "W:unprompted": "8aa4b9aaf6e6dadffd5523907c7f468f08fafeb0b20b860e43b0d556f233300b"
+  }
+}

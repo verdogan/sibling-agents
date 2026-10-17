@@ -1,0 +1,1 @@
+`npm test` fails. Fix src/settle.js so that the tests pass and the rules in SPEC.md hold. Keep the function's signature. Before you finish, run `sh tools/check.sh`; it must print CHECK OK. List the files you changed in result.json.

@@ -1,0 +1,64 @@
+[Unit]
+Description=Autonomous Pi Agent task API
+Documentation=https://github.com/verdogan
+After=network-online.target ling-podman.service
+Wants=network-online.target
+Requires=ling-podman.service
+
+[Service]
+Type=simple
+User=piagent
+Group=piagent
+WorkingDirectory=/opt/autonomous-pi-agent
+ExecStartPre=/usr/bin/npm run sandbox-check
+ExecStart=/usr/bin/node dist/server.js
+Restart=on-failure
+RestartSec=5s
+TimeoutStopSec=1020s
+
+# Secrets live here, not in the unit file. Mode 0600, owned by root.
+EnvironmentFile=/etc/autonomous-pi-agent.env
+
+# Keep Playwright's browsers inside the app directory so ProtectHome can stay on.
+Environment=PLAYWRIGHT_BROWSERS_PATH=/opt/autonomous-pi-agent/browsers
+# agent-browser stores daemon sockets and its downloaded Chrome under HOME.
+Environment=HOME=/opt/autonomous-pi-agent/runtime-home
+Environment=CONTAINER_HOST=unix:///run/piagent-podman/podman.sock
+
+# This service executes shell commands written by a language model. Everything
+# below exists to keep the blast radius of a bad command small.
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+ProtectClock=true
+ProtectHostname=true
+ProtectProc=invisible
+RestrictSUIDSGID=true
+RestrictRealtime=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX AF_NETLINK
+LockPersonality=true
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+
+# ProtectSystem=strict makes the filesystem read-only; these are the exceptions.
+ReadWritePaths=/opt/autonomous-pi-agent/workspaces
+ReadWritePaths=/opt/autonomous-pi-agent/auth
+ReadWritePaths=/opt/autonomous-pi-agent/data
+ReadWritePaths=/opt/autonomous-pi-agent/recipes
+ReadWritePaths=/opt/autonomous-pi-agent/runtime-home
+
+# Chromium's JIT maps writable and executable pages, so this must stay false.
+MemoryDenyWriteExecute=false
+
+MemoryMax=6G
+CPUQuota=200%
+TasksMax=2048
+
+[Install]
+WantedBy=multi-user.target

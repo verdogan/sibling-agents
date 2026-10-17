@@ -1,0 +1,72 @@
+{
+  "status": "success",
+  "summary": "Observed the worker through its completed final batch. It inspected the task inputs, wrote src/settle.js, invoked the requested test/check command, and wrote/updated result.json. The event stream confirms those actions completed without tool errors, but it does not include command stdout or a readback of the final files, so passing-test/check output and final contract contents are not independently verifiable from the available evidence.",
+  "data": {
+    "version": 1,
+    "summary": "Worker completed; execution events were complete, with no sensor visibility.",
+    "observed": {
+      "batches": 5,
+      "lastBatch": 5,
+      "heartbeats": 0,
+      "finalReceived": true
+    },
+    "concerns": [],
+    "statements": [
+      {
+        "ref": "a:21",
+        "reading": "accurate",
+        "refs": [
+          "a:11"
+        ],
+        "note": "The worker read campaign/context.json and campaign/slice.md; no coordination-file access or routing action appears in the observed events."
+      },
+      {
+        "ref": "a:32",
+        "reading": "unverifiable",
+        "refs": [
+          "a:27",
+          "a:28"
+        ],
+        "note": "The requested npm/check command was invoked and ended without a tool error, but stdout was not included. The pipeline also cannot independently establish the npm test exit code from this evidence alone."
+      },
+      {
+        "ref": "a:45",
+        "reading": "accurate",
+        "refs": [
+          "a:46",
+          "a:47",
+          "a:51",
+          "a:52"
+        ],
+        "note": "The worker computed a SHA-256 after noting its earlier placeholder and updated result.json without tool error."
+      },
+      {
+        "ref": "a:57",
+        "reading": "incomplete",
+        "refs": [
+          "a:22",
+          "a:23",
+          "a:27",
+          "a:28",
+          "a:39",
+          "a:40",
+          "a:51",
+          "a:52"
+        ],
+        "note": "Writing the source and result files and invoking verification are supported, but final source content, result-contract conformance, output text, and signature preservation were not read back in the visible event stream."
+      }
+    ],
+    "unobserved": [
+      "Contents of src/settle.js after the write and whether every SPEC.md rule holds.",
+      "Actual stdout and individual exit statuses establishing npm test success and CHECK OK.",
+      "Final contents and schema conformance of result.json, including its claimed proposed-output list.",
+      "Machine/sensor state was absent; only worker event-stream metadata was available."
+    ]
+  },
+  "steps": [
+    "Received five observation batches and watched until the final lifecycle event o:10 reported worker completion.",
+    "Reviewed the recorded file reads, source write, verification command invocation, result.json write/update, and worker claims.",
+    "Sent one caution about ensuring proposed outputs and result reporting met the task constraint; it was delivered.",
+    "Recorded the final report after complete event-stream coverage was reported."
+  ]
+}

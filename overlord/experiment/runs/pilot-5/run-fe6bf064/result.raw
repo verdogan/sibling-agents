@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "summary": "Fixed src/settle.js so SPEC.md's remainder rule holds: shares are floored proportionally, then leftover cents are handed out one at a time in payer order starting with the first payer. npm test passes (2/2) and sh tools/check.sh prints CHECK OK.",
+  "data": {
+    "kind": "build",
+    "artifacts": [
+      {
+        "path": "src/settle.js",
+        "sha256": "8863b4626dcc5dc57ca9431146fccb608c6e9ac75ac56bd06e93f575dcae214b"
+      }
+    ]
+  },
+  "steps": [
+    "Read campaign/slice.md, SPEC.md, config/settings.json, src/settle.js, test/settle.test.js, tools/check.sh",
+    "Confirmed no campaign/coordination.json exists, so no cross-slice routing applies",
+    "Fixed src/settle.js: added remainder distribution loop (one cent at a time, payer order) and a positive-weight-sum guard; signature unchanged",
+    "Ran npm test: 2/2 pass; ran sh tools/check.sh: prints CHECK OK",
+    "Spot-checked SPEC rules with extra cases (settle(10,[1,1,1])=[4,3,3], settle(7,[3,1])=[6,1], settle(5,[2,3,5]) sums to 5)"
+  ]
+}

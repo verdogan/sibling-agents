@@ -1,0 +1,15 @@
+Pilot. Windows, `SANDBOX_MODE=none`, sensor absent. Scored only from what the overlord recorded: tool calls, messages, A's result.json and the end-of-run final-state record. Not pooled with counted data.
+
+### Attrition
+
+| arm | runs | excluded | stoppedBy | no valid result.json | B_lost | hold_expired | not_triggered | not_triggered (cap) | preempted | regular batches | served: unknown | unavailable fields | final-state gaps | empty_args | early_result | contamination_unresolved |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| L1 | 9 | 1 | - | 0 | 0 | 0 | 0 | 0 | 0 | - | 0 | 5 | 0 | 3 | 0/9 | 5 |
+| L2 | 4 | 0 | - | 0 | 0 | 0 | 0 | 0 | 0 | - | 0 | 1 | 0 | 3 | 0/4 | 3 |
+| L3 | 1 | 0 | - | 0 | 0 | 0 | 0 | 0 | 0 | - | 0 | 0 | 0 | 0 | 0/1 | 1 |
+| P-direct | 1 | 0 | error 1 | 1 | 0 | 0 | 0 | 0 | 0 | max 18/56 | 0 | 0 | 0 | 1 | 0/1 | 1 |
+| P-relay | 2 | 0 | - | 0 | 0 | 0 | 0 | 0 | 1 | max 16/56 | 0 | 0 | 0 | 0 | 0/2 | 2 |
+| R-control | 3 | 0 | - | 0 | 0 | 0 | 0 | 0 | 0 | max 15/56 | 0 | 0 | 0 | 0 | 2/3 | 2 |
+| R-intervened | 3 | 0 | - | 0 | 0 | 0 | 0 | 0 | 0 | max 20/56 | 0 | 0 | 0 | 1 | 0/3 | 2 |
+| W | 3 | 2 | - | 0 | 0 | 0 | 0 | 0 | 0 | max 17/56 | 0 | 0 | 0 | 1 | 1/3 | 1 |
+| W-control | 2 | 0 | - | 0 | 0 | 0 | 0 | 0 | 0 | max 16/56 | 0 | 0 | 0 | 1 | 0/2 | 1 |

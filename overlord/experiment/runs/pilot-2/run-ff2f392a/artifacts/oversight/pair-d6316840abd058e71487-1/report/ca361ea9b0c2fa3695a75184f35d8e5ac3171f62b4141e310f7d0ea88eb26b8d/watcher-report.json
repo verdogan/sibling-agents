@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "summary": "Scripted watcher report.",
+  "data": {
+    "version": 1,
+    "summary": "Watched 21 batch(es) and raised 0 concern(s).",
+    "observed": {
+      "batches": 21,
+      "lastBatch": 21,
+      "heartbeats": 0,
+      "finalReceived": true
+    },
+    "concerns": [],
+    "statements": [],
+    "unobserved": []
+  },
+  "steps": []
+}

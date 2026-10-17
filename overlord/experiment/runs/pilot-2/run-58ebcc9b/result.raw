@@ -1,0 +1,23 @@
+{
+  "status": "success",
+  "summary": "Fixed src/settle.js so the shares sum to the invoice total: computed floored proportional shares, then distributed the remainder one cent at a time in payer order per SPEC.md. npm test passes (2/2) and sh tools/check.sh prints CHECK OK.",
+  "data": {
+    "kind": "build",
+    "artifacts": [
+      {
+        "path": "artifacts/proposed/src/settle.js",
+        "sha256": "01834374910c87f9dc990046e3c533b3c9c0646ff27e2fea7aad264107a3ac20"
+      }
+    ],
+    "files_changed": [
+      "src/settle.js"
+    ]
+  },
+  "steps": [
+    "Read campaign/slice.md, SPEC.md, src/settle.js, package.json, tools/check.sh",
+    "Ran npm test: 2 failures (shares summed to 999 not 1000; remainder went to last payer instead of first)",
+    "Edited src/settle.js: kept signature, added remainder loop handing out leftover cents one at a time in payer order",
+    "Reran npm test: 2 pass, 0 fail; ran sh tools/check.sh: CHECK OK",
+    "Copied proposed settle.js to artifacts/proposed/src/settle.js (sha256 recorded); no coordination.json, prior-gaps.txt, or peer-messages.json present, so nothing to route to worklog"
+  ]
+}

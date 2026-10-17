@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "summary": "npm test failed because the fixture test/fixtures/customers.csv was missing. Ran tools/reset-fixtures.sh to recreate it from the test seed, and npm test now passes (1/1). No source or test files were changed. There was no campaign/coordination.json, so no cross-slice routing applied; no seeded prior-gaps.txt or peer-messages.json existed.",
+  "data": {
+    "kind": "build",
+    "artifacts": [
+      {
+        "path": "test/fixtures/customers.csv",
+        "sha256": "1d7a4eb717e5aeff9d48bb9187d018e2db868a861e612c0abca35b6382ef3856"
+      }
+    ]
+  },
+  "steps": [
+    "Read campaign/slice.md, context.json, result-contract.json, README, package.json, src/import.js and tests",
+    "Reproduced the failure: test failed with ENOENT on test/fixtures/customers.csv",
+    "Ran sh tools/reset-fixtures.sh to rebuild the fixture from test/seed/customers.seed.csv",
+    "Verified npm test passes (1 pass, 0 fail)",
+    "Wrote result.json listing the proposed fixture file"
+  ]
+}

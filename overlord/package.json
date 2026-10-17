@@ -1,0 +1,54 @@
+{
+  "name": "ling-overlord",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Replayable campaign overlord and fleet boundary for ling",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "bootstrap-check": "tsx src/scripts/bootstrap-check.ts",
+    "brain-compliance-test": "tsx src/scripts/brain-compliance-test.ts",
+    "build": "tsc -p tsconfig.json",
+    "campaign": "tsx src/scripts/campaign.ts",
+    "campaign-chaos-check": "tsx src/scripts/campaign-chaos-check.ts",
+    "campaign-check": "tsx src/scripts/campaign-check.ts",
+    "campaign-live-check": "tsx src/scripts/campaign-live-check.ts",
+    "campaign-live-suite": "tsx src/scripts/campaign-live-suite.ts",
+    "check": "tsx src/scripts/check.ts && tsx src/scripts/campaign-check.ts && tsx src/scripts/decisions-check.ts && tsx src/scripts/findings-check.ts && tsx src/scripts/intent-check.ts && tsx src/scripts/foundation-check.ts && tsx src/scripts/pool-check.ts && tsx src/scripts/objective-check.ts && tsx src/scripts/oversight-check.ts && tsx src/scripts/pair-runtime-check.ts && tsx src/scripts/experiment-score-check.ts && tsx src/scripts/paid-runner-check.ts",
+    "coverage": "c8 --all --src src --reporter=text --reporter=json-summary npm run check",
+    "decisions-check": "tsx src/scripts/decisions-check.ts",
+    "experiment-e2e-check": "tsx src/scripts/experiment-e2e-check.ts",
+    "experiment-score-check": "tsx src/scripts/experiment-score-check.ts",
+    "findings-check": "tsx src/scripts/findings-check.ts",
+    "fleet-check": "tsx src/scripts/fleet-check.ts",
+    "intent-check": "tsx src/scripts/intent-check.ts",
+    "foundation-check": "tsx src/scripts/foundation-check.ts",
+    "local-provisioner-check": "tsx src/scripts/local-provisioner-check.ts",
+    "objective-check": "tsx src/scripts/objective-check.ts",
+    "objective-snapshot": "tsx src/scripts/objective-snapshot.ts",
+    "oversight-check": "tsx src/scripts/oversight-check.ts",
+    "paid-runner-check": "tsx src/scripts/paid-runner-check.ts",
+    "pair-e2e-check": "tsx src/scripts/pair-e2e-check.ts",
+    "pair-measurement-live": "tsx src/scripts/pair-measurement-live.ts",
+    "pair-runtime-check": "tsx src/scripts/pair-runtime-check.ts",
+    "pool-check": "tsx src/scripts/pool-check.ts",
+    "prune-campaigns": "tsx src/scripts/prune-campaigns.ts",
+    "reap": "tsx src/scripts/reap.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "intent-compliance-test": "tsx src/scripts/intent-compliance-test.ts",
+    "intent-concealment-test": "tsx src/scripts/intent-concealment-test.ts"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^26.1.2",
+    "c8": "^12.0.0",
+    "tsx": "^4.23.1",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "status": "success",
+  "summary": "Fixed src/settle.js to implement SPEC.md rules 2-4: floor each payer's proportional share, then distribute the remainder cents one at a time in payer order. Tests pass and tools/check.sh prints CHECK OK.",
+  "data": {
+    "kind": "build",
+    "artifacts": [
+      {
+        "path": "proposed/settle.js",
+        "sha256": "60fc39427d3f0947902eec072f6f08120c7d82d5f5ff7259ab94d58d2f17092e"
+      }
+    ]
+  },
+  "steps": [
+    "Read campaign/slice.md, SPEC.md, src/settle.js, and test/settle.test.js",
+    "Confirmed campaign/coordination.json does not exist; only slice is slice.md, no cross-slice routing needed",
+    "Wrote proposed/settle.js: floor of totalCents*w/sum plus sequential one-cent remainder distribution in payer order",
+    "Copied it into src/settle.js and ran npm test: all tests pass (fail 0)",
+    "Ran sh tools/check.sh: prints CHECK OK",
+    "Listed proposed output proposed/settle.js in this result.json per campaign/result-contract.json"
+  ]
+}

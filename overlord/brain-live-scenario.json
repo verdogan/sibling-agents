@@ -1,0 +1,81 @@
+{
+  "id": "brain-live-node-cli-v3",
+  "goal": "Create a small, production-quality Node.js slugify command-line tool without network access.",
+  "acceptance": [
+    {
+      "id": "cli",
+      "kind": "command",
+      "requirement": "Running node slugify.mjs \"Hello, World!\" exits 0 and prints exactly hello-world."
+    },
+    {
+      "id": "tests",
+      "kind": "command",
+      "requirement": "Running node test.mjs exits 0 and objectively tests case normalization, punctuation, repeated whitespace, and leading or trailing separators."
+    },
+    {
+      "id": "documentation",
+      "kind": "file",
+      "requirement": "README.md documents command usage, behavior, and how to run the tests."
+    }
+  ],
+  "budget": {
+    "maxTasks": 6,
+    "maxTotalCostUsd": 2,
+    "maxTotalTokens": 400000
+  },
+  "maxRounds": 2,
+  "slices": [
+    {
+      "id": "implementation",
+      "spec": "Implement the complete offline deliverable. Create slugify.mjs as a dependency-free Node.js CLI, test.mjs using only built-in Node modules, and README.md. The CLI must accept one positional string, normalize it to lowercase ASCII words separated by single hyphens, remove punctuation, trim separators, print only the slug, and return a non-zero exit code with a useful stderr message when input is missing. Run the tests before reporting artifacts. Do not access the network.",
+      "dependsOn": []
+    }
+  ],
+  "brain": {
+    "enabled": true,
+    "maxDecisions": 8,
+    "maxHaltReopens": 0
+  },
+  "roles": {
+    "planner": {
+      "tools": ["read", "write", "edit", "ls", "grep", "find", "bash"],
+      "maxCostUsd": 0.3,
+      "maxTurns": 12,
+      "maxWallClockMs": 180000,
+      "model": "gpt-5.6-terra",
+      "thinking": "low"
+    },
+    "builder": {
+      "tools": ["read", "write", "edit", "ls", "grep", "find", "bash"],
+      "maxCostUsd": 0.5,
+      "maxTurns": 24,
+      "maxWallClockMs": 300000,
+      "model": "gpt-5.6-terra",
+      "thinking": "low"
+    },
+    "reviewer": {
+      "tools": ["read", "ls", "grep", "find", "bash", "write_result"],
+      "maxCostUsd": 0.3,
+      "maxTurns": 24,
+      "maxWallClockMs": 300000,
+      "model": "gpt-5.6-terra",
+      "thinking": "low"
+    },
+    "integration": {
+      "tools": ["read", "ls", "grep", "find", "bash", "write_result"],
+      "maxCostUsd": 0.3,
+      "maxTurns": 24,
+      "maxWallClockMs": 300000,
+      "model": "gpt-5.6-terra",
+      "thinking": "low"
+    }
+  },
+  "coordination": {
+    "enabled": true,
+    "planningCandidates": 1,
+    "parallelSlices": false,
+    "passiveMessaging": false,
+    "maxMessages": 16,
+    "maxMessageBytes": 2048
+  }
+}

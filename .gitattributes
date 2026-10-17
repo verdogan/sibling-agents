@@ -1,0 +1,3 @@
+# Published pilot records are hashed byte for byte; never convert their line endings.
+overlord/experiment/runs/** -text
+reports/experiment-protocol.md -text

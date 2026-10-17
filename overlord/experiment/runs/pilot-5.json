@@ -1,0 +1,123 @@
+{
+  "id": "pilot-5",
+  "family": "pilot",
+  "runs": [
+    {
+      "runId": "run-a430c358",
+      "cell": "E1 L1 D1",
+      "arm": "L1",
+      "experiment": "E1",
+      "scenario": "ledger",
+      "variant": "D1",
+      "prompted": false,
+      "rep": 1,
+      "estimateUsd": 0.06,
+      "capUsd": 0.4
+    },
+    {
+      "runId": "run-fe6bf064",
+      "cell": "E2 L3 D3",
+      "arm": "L3",
+      "experiment": "E2",
+      "scenario": "ledger",
+      "variant": "D3",
+      "prompted": false,
+      "rep": 1,
+      "estimateUsd": 0.51,
+      "capUsd": 2.3
+    }
+  ],
+  "models": {
+    "a": {
+      "provider": "openrouter",
+      "model": "z-ai/glm-5.3-flash",
+      "thinking": "low",
+      "routing": {
+        "order": [
+          "z-ai"
+        ],
+        "allow_fallbacks": false
+      },
+      "servedProviderName": "Z.AI",
+      "prices": {
+        "input": 0.15,
+        "output": 0.5,
+        "cacheRead": 0.03,
+        "cacheWrite": 0
+      },
+      "compat": {
+        "supportsDeveloperRole": false,
+        "thinkingFormat": "openrouter",
+        "supportsStrictMode": true,
+        "sendSessionAffinityHeaders": true,
+        "openRouterRouting": {
+          "order": [
+            "z-ai"
+          ],
+          "allow_fallbacks": false
+        }
+      },
+      "thinkingLevel": "low",
+      "maxTokens": 131072
+    },
+    "b": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.6-terra",
+      "thinking": "low",
+      "routing": {
+        "order": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "servedProviderName": "OpenAI",
+      "prices": {
+        "input": 2,
+        "output": 12,
+        "cacheRead": 0.2,
+        "cacheWrite": 2.5
+      },
+      "compat": {
+        "thinkingFormat": "openrouter",
+        "supportsStrictMode": true,
+        "sendSessionAffinityHeaders": true,
+        "supportsMidConvoSystemMessages": true,
+        "openRouterRouting": {
+          "order": [
+            "openai"
+          ],
+          "allow_fallbacks": false
+        }
+      },
+      "thinkingLevel": "low",
+      "maxTokens": 128000
+    }
+  },
+  "thinking": "low",
+  "capMarginUsd": {
+    "aOnly": 0.1,
+    "modelB": 0.5
+  },
+  "ceilingUsd": 2.7,
+  "familyCeilingUsd": 5,
+  "promptDigests": {
+    "L0h:unprompted": "76db6e6f3d0b4b387eb810068f5464e38aed2b9c572f47867a9b61e1accf0a84",
+    "L1:prompted": "0d11a63d54fe2d93f93f26d72d0207686847bb3ce1e89421b6f94f4feda6b622",
+    "L1:unprompted": "c665c3d9371ff332b126af45479bfe0c7f27d9b0fdecd155fb2758cad2704929",
+    "L1s:unprompted": "612a80dcd9898756dd63ea2cddc537d627e091586dfda64ad6833d7b351d7e54",
+    "L2:unprompted": "8aa4b9aaf6e6dadffd5523907c7f468f08fafeb0b20b860e43b0d556f233300b",
+    "L3:unprompted": "8aa4b9aaf6e6dadffd5523907c7f468f08fafeb0b20b860e43b0d556f233300b",
+    "P-direct:unprompted": "8aa4b9aaf6e6dadffd5523907c7f468f08fafeb0b20b860e43b0d556f233300b",
+    "P-relay:unprompted": "8aa4b9aaf6e6dadffd5523907c7f468f08fafeb0b20b860e43b0d556f233300b",
+    "R-control:unprompted": "8aa4b9aaf6e6dadffd5523907c7f468f08fafeb0b20b860e43b0d556f233300b",
+    "R-intervened:unprompted": "8aa4b9aaf6e6dadffd5523907c7f468f08fafeb0b20b860e43b0d556f233300b",
+    "W-control:unprompted": "8aa4b9aaf6e6dadffd5523907c7f468f08fafeb0b20b860e43b0d556f233300b",
+    "W-unprompted:unprompted": "0c40baf31b1f62e177e0aefa90691847e94344ba8ef743dbb4581572f4699595",
+    "W:unprompted": "8aa4b9aaf6e6dadffd5523907c7f468f08fafeb0b20b860e43b0d556f233300b"
+  },
+  "piVersion": "1.0.3",
+  "gitHead": "6c17324e32f9c0220b78753d0c7d2bb06d0e704c",
+  "protocolPath": "C:/Users/verdogan/T/reports/experiment-protocol.md",
+  "protocolSha256": "92005a5370e1327dc6b3d812d219b661deb37257edd08c3cc8b70f3c21a45bbc",
+  "order": "fixed"
+}

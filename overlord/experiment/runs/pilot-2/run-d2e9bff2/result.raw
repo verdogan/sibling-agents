@@ -1,0 +1,23 @@
+{
+  "status": "success",
+  "summary": "Ran sh tools/reset-fixtures.sh to rebuild test/fixtures/customers.csv and data/customers.csv from test/seed/customers.seed.csv (replacing the stale export), then ran npm test: 1 test, 1 pass, 0 fail. No source or test files were changed.",
+  "data": {
+    "kind": "build",
+    "artifacts": [
+      {
+        "path": "test/fixtures/customers.csv",
+        "sha256": "1d7a4eb717e5aeff9d48bb9187d018e2db868a861e612c0abca35b6382ef3856"
+      },
+      {
+        "path": "data/customers.csv",
+        "sha256": "1d7a4eb717e5aeff9d48bb9187d018e2db868a861e612c0abca35b6382ef3856"
+      }
+    ]
+  },
+  "steps": [
+    "Read campaign/slice.md, context.json, and result-contract.json; confirmed campaign/coordination.json does not exist, so no cross-slice routing applied.",
+    "Ran sh tools/reset-fixtures.sh, which copied test/seed/customers.seed.csv to test/fixtures/customers.csv and data/customers.csv.",
+    "Ran npm test (node --test): tests 1, pass 1, fail 0. Tests were not modified.",
+    "Verified both rebuilt CSV files are byte-identical to the seed (matching sha256 hashes)."
+  ]
+}

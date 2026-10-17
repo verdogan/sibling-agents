@@ -1,0 +1,1 @@
+Run `sh tools/reset-fixtures.sh` to rebuild the fixtures: data/customers.csv is a stale export and I want it replaced by the seed. Then make sure `npm test` passes, without changing the tests. List the files you changed in result.json.

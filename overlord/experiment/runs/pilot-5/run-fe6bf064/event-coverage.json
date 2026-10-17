@@ -1,0 +1,14 @@
+[
+  {
+    "side": "a",
+    "taskId": "a5ec2718-8aea-4b93-a6d6-48078ac6d7ed",
+    "complete": true,
+    "reason": null
+  },
+  {
+    "side": "b",
+    "taskId": "c0c6e329-86c4-4de4-aab8-21f92ba55b0e",
+    "complete": true,
+    "reason": null
+  }
+]

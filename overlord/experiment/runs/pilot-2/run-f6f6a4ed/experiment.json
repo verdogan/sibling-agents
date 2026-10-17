@@ -1,0 +1,241 @@
+{
+  "version": 1,
+  "batchId": "pilot-2",
+  "runId": "run-f6f6a4ed",
+  "experiment": "E2",
+  "cell": "E2 L2 D1",
+  "arm": "L2",
+  "scenario": "ledger",
+  "variant": "D1",
+  "prompted": false,
+  "rep": 1,
+  "rerunOf": null,
+  "a": {
+    "provider": "openrouter",
+    "model": "z-ai/glm-5.3-flash",
+    "thinking": "low",
+    "routing": null,
+    "resolved": {
+      "provider": "openrouter",
+      "id": "z-ai/glm-5.3-flash",
+      "api": "openai-completions",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "cost": {
+        "input": 0.15,
+        "output": 0.5,
+        "cacheRead": 0.03,
+        "cacheWrite": 0
+      },
+      "compat": {
+        "supportsDeveloperRole": false,
+        "thinkingFormat": "openrouter",
+        "supportsStrictMode": true,
+        "sendSessionAffinityHeaders": true,
+        "openRouterRouting": {
+          "order": [
+            "z-ai"
+          ],
+          "allow_fallbacks": false
+        }
+      },
+      "thinkingLevelMap": {
+        "off": null,
+        "minimal": null,
+        "low": "low",
+        "medium": null,
+        "high": "high",
+        "xhigh": null,
+        "max": "max"
+      },
+      "contextWindow": 1048575,
+      "maxTokens": 131072,
+      "thinking": "low"
+    }
+  },
+  "b": {
+    "kind": "script",
+    "script": "silent",
+    "scriptSha256": "6262cfebfdf4f815131dc78550e1d0c0a4eace832fc5b3293a8fa9fd75e72511"
+  },
+  "limits": {
+    "a": {
+      "maxTurns": 30,
+      "maxWallClockMs": 900000,
+      "maxCostUsd": 0.3
+    },
+    "b": {
+      "maxWallClockMs": 1920000,
+      "maxTurns": 164,
+      "maxCostUsd": 0.01
+    }
+  },
+  "minBatchIntervalMs": 27858,
+  "maxRounds": 1,
+  "maxTasks": 4,
+  "brain": "unset",
+  "lingSettings": {
+    "AGENT_MODEL": "openai/gpt-5.6-terra",
+    "AGENT_PROVIDER": "openrouter",
+    "AGENT_THINKING": "medium",
+    "BLOCK_PRIVATE_NETWORK": "false",
+    "BROWSER_HEADLESS": "true",
+    "BROWSER_TRACE": "false",
+    "MAX_COST_USD": "2.00",
+    "MAX_TURNS": "60",
+    "MAX_WALL_CLOCK_MS": "900000",
+    "SANDBOX_CPUS": "2",
+    "SANDBOX_IMAGE": "node:22-bookworm-slim",
+    "SANDBOX_MEMORY": "2g",
+    "SANDBOX_MODE": "none",
+    "SANDBOX_NETWORK": "bridge",
+    "SANDBOX_PIDS_LIMIT": "512",
+    "LING_MODEL_ROUTING": "{\"z-ai/glm-5.3-flash\":{\"order\":[\"z-ai\"],\"allow_fallbacks\":false},\"openai/gpt-5.6-terra\":{\"order\":[\"openai\"],\"allow_fallbacks\":false}}",
+    "LING_MODEL_MAX_TOKENS": "{\"z-ai/glm-5.3-flash\":131072,\"openai/gpt-5.6-terra\":128000}"
+  },
+  "instrument": {
+    "gitHead": "78c5b4a6661bd401c0e2375e2275e53c86dac56c",
+    "clean": true,
+    "pi": {
+      "codingAgent": "1.0.3",
+      "ai": [
+        "1.0.3"
+      ]
+    },
+    "agentSettingsSha256": "absent",
+    "piAgentDir": {
+      "files": [
+        "auth.json",
+        "models-store.json"
+      ]
+    }
+  },
+  "manifestSha256": "326f62ac0f99457a23ff97a0866be466ad6f286104ce57ec8aae37ce7e28ab1d",
+  "promptDigest": "8aa4b9aaf6e6dadffd5523907c7f468f08fafeb0b20b860e43b0d556f233300b",
+  "child": {
+    "workspaceDir": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-2539b28b-7efa-4c19-8496-a8af6a1a3de2-zfVGKt\\workspaces\\ad769e6b-dcc1-4941-8d0b-bbe6d07751f6",
+    "workspaceDirReal": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-2539b28b-7efa-4c19-8496-a8af6a1a3de2-zfVGKt\\workspaces\\ad769e6b-dcc1-4941-8d0b-bbe6d07751f6",
+    "home": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-2539b28b-7efa-4c19-8496-a8af6a1a3de2-zfVGKt\\runtime-home",
+    "tmp": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-2539b28b-7efa-4c19-8496-a8af6a1a3de2-zfVGKt\\tmp",
+    "userProfile": "C:\\Users\\verdogan",
+    "runtimeRemoved": true
+  },
+  "approval": {
+    "approvedAt": "2026-10-13T16:37:28.602Z",
+    "estimateUsd": 0.06,
+    "capUsd": 0.4,
+    "spentBeforeUsd": 0.09759466000000001,
+    "remainingBeforeUsd": 4.84240534,
+    "confirmedEach": false
+  },
+  "campaign": {
+    "id": "ledger-eaef72"
+  },
+  "tasks": {
+    "builderIds": [
+      "ad769e6b-dcc1-4941-8d0b-bbe6d07751f6"
+    ],
+    "watcherId": "scripted-watcher-1"
+  },
+  "workspaceDir": "C:\\Users\\verdogan\\AppData\\Local\\Temp\\ling-overlord-workers\\local-2539b28b-7efa-4c19-8496-a8af6a1a3de2-zfVGKt\\workspaces\\ad769e6b-dcc1-4941-8d0b-bbe6d07751f6",
+  "started": "2026-10-13T16:37:28.602Z",
+  "ended": "2026-10-13T16:39:02.434Z",
+  "cost": {
+    "a": 0.00265783,
+    "b": null,
+    "reconciled": 0.00265783
+  },
+  "served": [
+    {
+      "responseId": "gen-1791909463-ARvQ39dWiR506l49XcPL",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00028978,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791909470-1UYePc7dknRyRWvLl9Sc",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00026002999999999996,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791909476-b8tmOnenSJ4dqTPMiR0u",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00014375,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791909481-VPUbIpb5INhNDbCLYhH4",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00014625,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791909489-rUskzouJUVWQardc8pCY",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00031707999999999997,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791909498-k9JyePccZTkhJmRC29H3",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00017080999999999997,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791909506-xG518sVizz3ci82f7HEm",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00023734,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791909514-s2do1ohoDQE4fUUtANTJ",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00026608999999999997,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791909519-BAI218MNRUthzNR9zcsN",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00020168999999999997,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791909528-AOnLzMxmxod1m8NoMRX0",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.0003682599999999999,
+      "attempts": 1
+    },
+    {
+      "responseId": "gen-1791909538-AzVj8qLsL0Y3exFoHaau",
+      "inBandProvider": "Z.AI",
+      "lookupProvider": "Z.AI",
+      "model": "z-ai/glm-5.3-flash",
+      "costUsd": 0.00025675,
+      "attempts": 1
+    }
+  ],
+  "outcome": {
+    "status": "included",
+    "reason": null
+  }
+}
